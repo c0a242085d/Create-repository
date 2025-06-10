@@ -12,13 +12,14 @@ def main():
     bg_img = pg.image.load("fig/pg_bg.jpg") #背景画面はSurface
     kk_img = pg.image.load("fig/3.png") #こうかトン画像のSurface
     kk_img = pg.transform.flip(kk_img,True,False)
+    bg_img2 = pg.transform.flip(bg_img,True,False)
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [-tmr, 0])#一枚目
-        screen.blit(bg_img, [-tmr+1600,0])#二枚目
+        screen.blit(bg_img2, [-tmr+1600,0])#二枚目
         screen.blit(kk_img, [300, 200])
         pg.display.update()
         tmr += 1        
